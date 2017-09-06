@@ -13,7 +13,7 @@ services:
       - LC_ALL=C.UTF-8
       - REMOTE_CHROME_URL=http://chrome:9222
     working_dir: /uswds-data
-    command: yarn start
+    command: jekyll serve --force_polling --H 0.0.0.0 -P 4000
     ports:
       - 4000:4000
     stop_signal: SIGKILL
