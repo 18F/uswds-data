@@ -20,3 +20,5 @@ exclude:
   - 'docker-*.yml'
   # circleCI stuff
   - vendor
+  # non-jekyll directories
+  - config

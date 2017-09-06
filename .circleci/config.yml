@@ -3,7 +3,12 @@ jobs:
   build:
     working_directory: ~/uswds-data
     docker:
+      # Primary container image where all steps run.
       - image: circleci/ruby:2.2-node
+        environment:
+          - REMOTE_CHROME_URL=http://localhost:9222
+      # Extra containers.
+      - image: yukinying/chrome-headless-browser:61.0.3141.7
     steps:
       - checkout
 

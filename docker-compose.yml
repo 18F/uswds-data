@@ -11,10 +11,16 @@ services:
       - LANG=C.UTF-8
       - LANGUAGE=C.UTF-8
       - LC_ALL=C.UTF-8
+      - REMOTE_CHROME_URL=http://chrome:9222
     working_dir: /uswds-data
     command: yarn start
     ports:
       - 4000:4000
+    stop_signal: SIGKILL
+  chrome:
+    image: yukinying/chrome-headless-browser:61.0.3141.7
+    cap_add:
+      - SYS_ADMIN
     stop_signal: SIGKILL
 volumes:
   node-modules:
