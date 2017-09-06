@@ -1,0 +1,43 @@
+version: 2
+jobs:
+  build:
+    working_directory: ~/uswds-data
+    docker:
+      - image: circleci/ruby:2.2-node
+    steps:
+      - checkout
+
+      # Restore bundle cache
+      - type: cache-restore
+        key: uswds-data-bundle-{{ checksum "Gemfile.lock" }}
+
+      # Bundle install dependencies
+      - run: bundle install --path vendor/bundle
+
+      # Store bundle cache
+      - type: cache-save
+        key: uswds-data-bundle-{{ checksum "Gemfile.lock" }}
+        paths:
+          - vendor/bundle
+
+      # Restore yarn cache
+      - type: cache-restore
+        key: uswds-data-yarn-{{ checksum "yarn.lock" }}
+
+      # Yarn install dependencies
+      - run: yarn
+
+      # Store bundle cache
+      - type: cache-save
+        key: uswds-data-yarn-{{ checksum "yarn.lock" }}
+        paths:
+          - node_modules
+
+      # Run tests
+      - type: shell
+        command: |
+          yarn test
+
+      # Save artifacts
+      - type: store_test_results
+        path: /tmp/test-results
