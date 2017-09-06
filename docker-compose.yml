@@ -13,6 +13,10 @@ services:
       - LC_ALL=C.UTF-8
       - NPM_CMD=yarn
     working_dir: /uswds-data
+    command: yarn start
+    ports:
+      - 4000:4000
+    stop_signal: SIGKILL
 volumes:
   node-modules:
   root:

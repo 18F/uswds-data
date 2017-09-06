@@ -2,7 +2,9 @@
   "name": "uswds-data",
   "version": "0.0.1",
   "description": "A data visualization guide for the U.S. Web Design Standards.",
-  "main": "index.js",
+  "scripts": {
+    "start": "bundle exec jekyll serve -H 0.0.0.0"
+  },
   "repository": "https://github.com/18F/uswds-data.git",
   "author": "18F",
   "license": "CC0-1.0"
