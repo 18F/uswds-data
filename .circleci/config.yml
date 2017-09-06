@@ -11,10 +11,10 @@ jobs:
       # https://discuss.circleci.com/t/using-the-latest-version-of-chrome-on-circleci/871/4
       - type: shell
         command: |
-          curl -L -o vendor/google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
-          sudo dpkg -i vendor/google-chrome.deb && \
+          curl -L -o google-chrome.deb https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb && \
+          sudo dpkg -i google-chrome.deb && \
           sudo sed -i 's|HERE/chrome\"|HERE/chrome\" --disable-setuid-sandbox|g' /opt/google/chrome/google-chrome && \
-          rm vendor/google-chrome.deb
+          rm google-chrome.deb
 
       # Restore bundle cache
       - type: cache-restore
