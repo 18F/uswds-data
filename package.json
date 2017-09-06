@@ -4,7 +4,7 @@
   "description": "A data visualization guide for the U.S. Web Design Standards.",
   "scripts": {
     "start": "bundle exec jekyll serve -H 0.0.0.0",
-    "test": "bundle exec jekyll build"
+    "test": "bundle exec jekyll build && node config/crawl.js && node config/run-axe.js"
   },
   "repository": "https://github.com/18F/uswds-data.git",
   "author": "18F",

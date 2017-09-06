@@ -9,6 +9,7 @@ To get started, you'll need:
 * Node 6
 * [Yarn][]
 * Ruby 2.2
+* Chrome v60 or later
 
 To get started, run the following:
 
@@ -18,6 +19,9 @@ yarn start
 ```
 
 Then visit http://localhost:4000.
+
+Whenever you update this repository, you will want to
+re-run `bash update.sh`.
 
 ## Using Docker (optional)
 
@@ -36,7 +40,27 @@ docker-compose up
 
 Then visit http://localhost:4000.
 
+Whenever you update this repository, you will want to
+re-run `bash docker-update.sh`.
+
+If you want to run any commands within the container, such as
+any commands specified elsewhere in this readme, you can do so
+by prefixing the command with `docker-compose run app`. To enter
+a shell that allows you to run any command without having to
+prefix it, run `docker-compose run app bash`.
+
+## Running tests
+
+To run the tests, run `yarn test`.
+
+## Adding pages for accessibility testing
+
+The test suite runs [aXe][] on a subset of the site, to help ensure that
+the site is accessible. To add to the list of pages that aXe is run on,
+edit the `PAGES` array in `config/run-axe.js`.
+
 [U.S. Web Design Standards]: https://standards.usa.gov/
 [Docker]: https://www.docker.com/community-edition
 [git for Windows]: https://git-for-windows.github.io/
 [Yarn]: https://yarnpkg.com/en/
+[aXe]: https://axe-core.org/
