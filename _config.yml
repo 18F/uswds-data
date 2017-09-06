@@ -18,3 +18,5 @@ exclude:
   # docker stuff
   - Dockerfile
   - 'docker-*.yml'
+  # circleCI stuff
+  - vendor
