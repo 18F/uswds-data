@@ -1,3 +1,5 @@
+[![CircleCI](https://circleci.com/gh/18F/uswds-data.svg?style=svg)](https://circleci.com/gh/18F/uswds-data)
+
 This is a data visualization guide for the [U.S. Web Design Standards][].
 
 ## Quick start
