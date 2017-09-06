@@ -4,14 +4,15 @@ This is a data visualization guide for the [U.S. Web Design Standards][].
 
 To get started, you'll need:
 
-* node 6
-* ruby 2.2
+* Node 6
+* [Yarn][]
+* Ruby 2.2
 
 To get started, run the following:
 
 ```
 bash update.sh
-npm start
+yarn start
 ```
 
 Then visit http://localhost:4000.
@@ -36,3 +37,4 @@ Then visit http://localhost:4000.
 [U.S. Web Design Standards]: https://standards.usa.gov/
 [Docker]: https://www.docker.com/community-edition
 [git for Windows]: https://git-for-windows.github.io/
+[Yarn]: https://yarnpkg.com/en/
