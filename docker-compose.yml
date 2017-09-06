@@ -1,0 +1,19 @@
+version: '2'
+services:
+  app:
+    build: .
+    volumes:
+      - .:/uswds-data
+      - node-modules:/uswds-data/node_modules/
+      - root:/root/
+      - bundle:/usr/local/bundle/
+    environment:
+      - LANG=C.UTF-8
+      - LANGUAGE=C.UTF-8
+      - LC_ALL=C.UTF-8
+      - NPM_CMD=yarn
+    working_dir: /uswds-data
+volumes:
+  node-modules:
+  root:
+  bundle:
