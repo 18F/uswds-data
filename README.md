@@ -21,6 +21,9 @@ Then visit http://localhost:4000.
 Alternatively, you can use [Docker][], which doesn't involve installing
 any extra dependencies.
 
+If you are on Windows, you will also need `bash`, which you can probably
+get most easily by installing [git for Windows][].
+
 To get started, run:
 
 ```
@@ -31,3 +34,5 @@ docker-compose up
 Then visit http://localhost:4000.
 
 [U.S. Web Design Standards]: https://standards.usa.gov/
+[Docker]: https://www.docker.com/community-edition
+[git for Windows]: https://git-for-windows.github.io/
