@@ -1,6 +1,5 @@
 const fs = require('fs');
 const path = require('path');
-const chalk = require('chalk');
 const gulp = require('gulp');
 const yaml = require('js-yaml');
 
@@ -18,20 +17,16 @@ function buildJekyll() {
 }
 
 gulp.task('watch', _ => {
+  const rebuildJekyll = util.buildify('Jekyll site', buildJekyll);
+
   staticServerApp.listen(PORT, () => {
     console.log(`Static server listening on port ${PORT}.`);
   });
+
   gulp.watch([
     '**/*',
     '!_site/**/*',
-  ].concat(jekyllExcludes), () => {
-    console.log('Rebuilding Jekyll site...');
-    buildJekyll().then(ms => {
-      console.log(`Rebuilt Jekyll site in ${ms} ms.`);
-    }, err => {
-      console.log(chalk.red(err.message));
-    });
-  });
+  ].concat(jekyllExcludes), rebuildJekyll);
 });
 
 gulp.task('default', buildJekyll);

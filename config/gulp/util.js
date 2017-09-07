@@ -1,5 +1,6 @@
 const fs = require('fs');
 const child_process = require('child_process');
+const chalk = require('chalk');
 
 function jekyllToNodeGlob(glob) {
   try {
@@ -30,7 +31,42 @@ function runCmd(command, args) {
   });
 }
 
+function buildify(name, startBuild) {
+  let currentBuild = null;
+  let buildQueued = false;
+  const onBuildFinished = () => {
+    currentBuild = null;
+    if (buildQueued) {
+      buildQueued = false;
+      console.log(`Rebuilding ${name}...`);
+      const start = Date.now();
+      currentBuild = startBuild().then(() => {
+        const ms = Date.now() - start;
+        console.log(`Rebuilt ${name} in ${ms} ms.`);
+        onBuildFinished();
+      }, err => {
+        console.log(chalk.red(`Rebuilding ${name} failed: ${err.message}`));
+        onBuildFinished();
+      });
+    }
+  };
+
+  return function build() {
+    if (buildQueued) {
+      console.log(`Rebuild of ${name} is already scheduled.`);
+    } else {
+      buildQueued = true;
+      if (currentBuild) {
+        console.log(`Rebuild of ${name} in progress, scheduling another.`);
+      } else {
+        onBuildFinished();
+      }
+    }
+  };
+}
+
 module.exports = {
   jekyllToNodeGlob,
   runCmd,
+  buildify,
 };
