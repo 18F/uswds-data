@@ -2,6 +2,7 @@ const fs = require('fs');
 const child_process = require('child_process');
 const chalk = require('chalk');
 
+// Convert a Jekyll-style glob expression into a Node-style one.
 function jekyllToNodeGlob(glob) {
   try {
     if (fs.lstatSync(glob).isDirectory()) {
@@ -12,6 +13,9 @@ function jekyllToNodeGlob(glob) {
   return glob;
 }
 
+// Run the given command with the given arguments, returning a
+// Promise that resolves to the number of milliseconds the
+// command took to run.
 function runCmd(command, args) {
   args = args || [];
   return new Promise((resolve, reject) => {
@@ -31,7 +35,16 @@ function runCmd(command, args) {
   });
 }
 
-function buildify(name, startBuild) {
+// Returns a function that can be used to trigger build processes
+// in a serialized way, so that only one build is ever in progress
+// at a time. Useful in conjunction with watching files, to ensure
+// that e.g. quick edits to the same file don't trigger multiple
+// parallel builds.
+//
+// If the returned function is called multiple times while a build
+// is in progress, at most one build is queued to be run once the
+// current build is finished.
+function serializedBuild(name, startBuild) {
   let currentBuild = null;
   let buildQueued = false;
   const onBuildFinished = () => {
@@ -68,5 +81,5 @@ function buildify(name, startBuild) {
 module.exports = {
   jekyllToNodeGlob,
   runCmd,
-  buildify,
+  serializedBuild,
 };

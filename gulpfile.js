@@ -17,7 +17,7 @@ function buildJekyll() {
 }
 
 gulp.task('watch', _ => {
-  const rebuildJekyll = util.buildify('Jekyll site', buildJekyll);
+  const rebuildJekyll = util.serializedBuild('Jekyll site', buildJekyll);
 
   staticServerApp.listen(PORT, () => {
     console.log(`Static server listening on port ${PORT}.`);
