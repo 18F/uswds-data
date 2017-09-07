@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "A data visualization guide for the U.S. Web Design Standards.",
   "scripts": {
-    "start": "bundle exec jekyll serve",
+    "start": "gulp watch",
     "test": "bundle exec jekyll build && node config/crawl.js && node config/run-axe.js"
   },
   "repository": "https://github.com/18F/uswds-data.git",
@@ -15,6 +15,8 @@
     "chrome-launcher": "^0.6.0",
     "chrome-remote-interface": "^0.24.5",
     "express": "^4.15.4",
+    "gulp": "^3.9.1",
+    "js-yaml": "^3.9.1",
     "simplecrawler": "^1.1.5"
   }
 }

@@ -28,3 +28,5 @@ module.exports = () => {
     });
   });
 };
+
+module.exports.app = app;
