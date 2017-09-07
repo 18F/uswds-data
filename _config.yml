@@ -6,6 +6,7 @@ exclude:
   - '*.lock'
   # other scripts
   - '*.sh'
+  - gulpfile.js
   # markdown files
   - CONTRIBUTING.md
   - LICENSE.md
