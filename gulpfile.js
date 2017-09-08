@@ -49,11 +49,19 @@ gulp.task('watch', ['build'], _ => {
   gulp.watch('./sass/**/*.scss', ['sass']);
 });
 
-gulp.task('build', [
+gulp.task('static', [
   'sass',
   'copy-uswds-assets',
-], () => {
-  return util.runTasks('hugo');
+]);
+
+gulp.task('federalist', ['static'], () => {
+  // Federalist uses '_site' instead of 'public', so move our
+  // pre-generated asset folder.
+  //
+  // For more details, see:
+  //
+  // https://github.com/18F/federalist-garden-build/blob/staging/build.sh#L85
+  return util.runCmd('mv', ['public', '_site']);
 });
 
-gulp.task('default', ['build']);
+gulp.task('default', ['static', 'hugo']);

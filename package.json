@@ -4,7 +4,7 @@
   "description": "A data visualization guide for the U.S. Web Design Standards.",
   "scripts": {
     "start": "gulp watch",
-    "federalist": "gulp build",
+    "federalist": "gulp federalist",
     "test": "gulp build && node config/crawl.js && node config/run-axe.js"
   },
   "repository": "https://github.com/18F/uswds-data.git",
