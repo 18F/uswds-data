@@ -48,7 +48,12 @@ gulp.task('watch', ['build'], _ => {
     '**/*',
     '!_site/**/*',
     '!css/**/*',
-  ].concat(jekyllExcludes), rebuildJekyll);
+    '!vendor/uswds/**/*',
+  ].concat(jekyllExcludes), e => {
+    // Uncomment the following line to debug over-eager rebuilds.
+    // console.log('file changed', e.path);
+    rebuildJekyll();
+  });
 
   gulp.watch('./sass/**/*.scss', () => {
     util.runTasks('sass').then(rebuildJekyll);
