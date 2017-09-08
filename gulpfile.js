@@ -64,4 +64,6 @@ gulp.task('federalist', ['static'], () => {
   return util.runCmd('mv', ['public', '_site']);
 });
 
-gulp.task('default', ['static', 'hugo']);
+gulp.task('build', ['static', 'hugo']);
+
+gulp.task('default', ['build']);
