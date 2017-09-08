@@ -12,6 +12,11 @@ jobs:
     steps:
       - checkout
 
+      - type: shell
+        command: |
+          wget https://github.com/spf13/hugo/releases/download/v0.26/hugo_0.26-64bit.deb && \
+          sudo dpkg -i hugo*.deb
+
       # Restore bundle cache
       - type: cache-restore
         key: uswds-data-bundle-{{ checksum "Gemfile.lock" }}
