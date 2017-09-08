@@ -6,11 +6,7 @@ services:
       - .:/uswds-data
       - node-modules:/uswds-data/node_modules/
       - root:/root/
-      - bundle:/usr/local/bundle/
     environment:
-      - LANG=C.UTF-8
-      - LANGUAGE=C.UTF-8
-      - LC_ALL=C.UTF-8
       - REMOTE_CHROME_URL=http://chrome:9222
       - PORT=4000
     working_dir: /uswds-data
@@ -26,4 +22,3 @@ services:
 volumes:
   node-modules:
   root:
-  bundle:

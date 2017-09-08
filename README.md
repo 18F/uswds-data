@@ -8,8 +8,8 @@ To get started, you'll need:
 
 * Node 6
 * [Yarn][]
-* Ruby 2.2
 * Chrome v60 or later
+* [Hugo][]
 
 To get started, run the following:
 
@@ -64,3 +64,4 @@ edit the `PAGES` array in `config/run-axe.js`.
 [git for Windows]: https://git-for-windows.github.io/
 [Yarn]: https://yarnpkg.com/en/
 [aXe]: https://axe-core.org/
+[Hugo]: https://gohugo.io/getting-started/installing/

@@ -4,7 +4,7 @@ jobs:
     working_directory: ~/uswds-data
     docker:
       # Primary container image where all steps run.
-      - image: circleci/ruby:2.2-node
+      - image: circleci/node:6.11.3
         environment:
           - REMOTE_CHROME_URL=http://localhost:9222
       # Extra containers.
@@ -12,18 +12,10 @@ jobs:
     steps:
       - checkout
 
-      # Restore bundle cache
-      - type: cache-restore
-        key: uswds-data-bundle-{{ checksum "Gemfile.lock" }}
-
-      # Bundle install dependencies
-      - run: bundle install --path vendor/bundle
-
-      # Store bundle cache
-      - type: cache-save
-        key: uswds-data-bundle-{{ checksum "Gemfile.lock" }}
-        paths:
-          - vendor/bundle
+      - type: shell
+        command: |
+          wget https://github.com/gohugoio/hugo/releases/download/v0.26/hugo_0.26_Linux-64bit.deb && \
+          sudo dpkg -i hugo*.deb
 
       # Restore yarn cache
       - type: cache-restore
