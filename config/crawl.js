@@ -14,7 +14,6 @@ const WARNING_PAGES = [
 ];
 const WARNING = chalk.yellow('Warning');
 const ERROR = chalk.red('Error');
-const SITE_PATH = path.normalize(`${__dirname}/../_site`);
 
 function shouldFetch(item, referrerItem) {
   if (item.path.match(/&quot;/)) {

@@ -3,17 +3,6 @@ const child_process = require('child_process');
 const runSequence = require('run-sequence');
 const chalk = require('chalk');
 
-// Convert a Jekyll-style glob expression into a Node-style one.
-function jekyllToNodeGlob(glob) {
-  try {
-    if (fs.lstatSync(glob).isDirectory()) {
-      return `${glob}/**/*`;
-    }
-  } catch (e) {}
-
-  return glob;
-}
-
 // Run the given command with the given arguments, returning a
 // Promise that resolves to the number of milliseconds the
 // command took to run.
@@ -82,7 +71,6 @@ function runTasks(/* name1, name2, ... */) {
 }
 
 module.exports = {
-  jekyllToNodeGlob,
   runCmd,
   serializedTask,
   runTasks,

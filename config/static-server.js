@@ -5,7 +5,7 @@ const express = require('express');
 
 const app = express();
 
-const SITE_PATH = path.normalize(`${__dirname}/../_site`);
+const SITE_PATH = path.normalize(`${__dirname}/../public`);
 
 app.use(express.static(SITE_PATH));
 
