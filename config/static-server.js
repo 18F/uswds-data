@@ -7,14 +7,14 @@ const app = express();
 
 const SITE_PATH = path.normalize(`${__dirname}/../_site`);
 
-if (fs.existsSync(SITE_PATH)) {
-  app.use(express.static(SITE_PATH));
-} else {
-  console.log(`Please build the site before running me.`);
-  process.exit(1);
-}
+app.use(express.static(SITE_PATH));
 
 module.exports = () => {
+  if (!fs.existsSync(SITE_PATH)) {
+    console.log(`Please build the site before running me.`);
+    process.exit(1);
+  }
+
   return new Promise((resolve, reject) => {
     const server = app.listen(() => {
       const hostname = os.hostname().toLowerCase();

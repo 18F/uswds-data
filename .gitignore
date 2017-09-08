@@ -1,3 +1,5 @@
 _site/
+vendor/
+css/
 node_modules/
 *.log
