@@ -25,7 +25,7 @@ function runWebpack(additionalConfig) {
 gulp.task('webpack', () => runWebpack());
 
 gulp.task('hugo', () => {
-  return util.runCmd('hugo', ['--quiet']);
+  return util.runCmd('hugo', ['']);
 });
 
 gulp.task('sass', () => {
