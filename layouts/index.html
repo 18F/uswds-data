@@ -2,11 +2,11 @@
 <html {{ with .Site.LanguageCode }} lang="{{ . }}"{{ end }}>
   <head>
     <meta charset="utf-8">
-    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="{{ .Site.BaseURL }}css/styles.css">
     <title>{{ .Title }}</title>
   </head>
   <body>
     <h1>Hello!</h1>
-    <script src="js/bundle.js"></script>
+    <script src="{{ .Site.BaseURL }}js/bundle.js"></script>
   </body>
 </html>
