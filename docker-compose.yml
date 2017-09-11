@@ -9,6 +9,7 @@ services:
     environment:
       - REMOTE_CHROME_URL=http://chrome:9222
       - PORT=4000
+      - WEBPACK_USE_POLLING=yup
     working_dir: /uswds-data
     command: yarn start
     ports:

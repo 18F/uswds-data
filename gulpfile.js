@@ -3,13 +3,26 @@ const path = require('path');
 const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
+const webpack = require('webpack-stream');
 
+const webpackConfig = require('./webpack.config');
 const staticServerApp = require('./config/static-server').app;
 const util = require('./config/gulp/util');
 
 const PORT = process.env.PORT || 4000;
 const USWDS_DIST = 'node_modules/uswds/dist';
 const USWDS_DIST_DIR = path.join(__dirname, ...USWDS_DIST.split('/'));
+
+function runWebpack(additionalConfig) {
+  const config = Object.assign(JSON.parse(JSON.stringify(webpackConfig)),
+                               additionalConfig || {});
+
+  return gulp.src(config.entry)
+    .pipe(webpack(config))
+    .pipe(gulp.dest('./public/js'));
+}
+
+gulp.task('webpack', () => runWebpack());
 
 gulp.task('hugo', () => {
   return util.runCmd('hugo', ['--quiet']);
@@ -47,10 +60,18 @@ gulp.task('watch', ['build'], _ => {
   ], rebuildHugo);
 
   gulp.watch('./sass/**/*.scss', ['sass']);
+
+  // Note that because running webpack in watch mode causes it to
+  // do an initial build, this means that we'll actually be running
+  // webpack *twice* on initialization, since webpack is part of the
+  // 'build' task too. This is kind of annoying but not as confusing
+  // as structuring this gulpfile to avoid the extra build.
+  runWebpack({ watch: true });
 });
 
 gulp.task('static', [
   'sass',
+  'webpack',
   'copy-uswds-assets',
 ]);
 
