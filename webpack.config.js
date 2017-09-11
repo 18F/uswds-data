@@ -5,6 +5,9 @@ module.exports = {
   output: {
     filename: 'bundle.js',
   },
+  devtool: process.env.NODE_ENV === 'production'
+           ? 'source-map'
+           : 'eval-source-map',
   watchOptions: {
     poll: WEBPACK_USE_POLLING,
   },
