@@ -6,8 +6,25 @@
     <title>{{ .Title }}</title>
   </head>
   <body>
-  {{ partial "header.html" . }}
-    <h1>Hello!</h1>
+    {{ partial "header.html" . }}
+    <div class="usa-grid usa-section usa-content usa-layout-docs">
+      <aside class="usa-width-one-fourth">
+        <ul class="usa-sidenav-list">
+          <li>
+            <a class="usa-current" href="javascript:void(0);">Current page</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">Parent link</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);">Parent link</a>
+          </li>
+        </ul>
+      </aside>
+      <main class="usa-width-three-fourths usa-content usa-layout-docs-main">
+        <h1>Hello!</h1>
+      </main>
+    </div>
     <script src="{{ "js/bundle.js" | absURL }}"></script>
   </body>
 </html>
