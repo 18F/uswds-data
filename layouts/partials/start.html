@@ -1,0 +1,8 @@
+<!DOCTYPE html>
+<html {{ with .Site.LanguageCode }} lang="{{ . }}"{{ end }}>
+  {{ partial "head.html" . }}
+  <body>
+    {{ partial "header.html" . }}
+    <div class="usa-grid usa-section usa-content usa-layout-docs">
+      {{ partial "side-nav.html" . }}
+      <main class="usa-width-three-fourths usa-content usa-layout-docs-main">
