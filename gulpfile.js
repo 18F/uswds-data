@@ -4,6 +4,7 @@ const gulp = require('gulp');
 const sass = require('gulp-sass');
 const sourcemaps = require('gulp-sourcemaps');
 const webpack = require('webpack-stream');
+const chokidar = require('chokidar');
 
 const webpackConfig = require('./webpack.config');
 const staticServerApp = require('./config/static-server').app;
@@ -47,19 +48,26 @@ gulp.task('copy-uswds-assets', () => {
 
 gulp.task('watch', ['build'], _ => {
   const rebuildHugo = util.serializedTask('hugo');
+  const rebuildSass = util.serializedTask('sass');
 
   staticServerApp.listen(PORT, () => {
     console.log(`Static server listening on port ${PORT}.`);
   });
 
-  gulp.watch([
+  chokidar.watch([
     'config.toml',
     'content/**/*',
     'static/**/*',
     'layouts/**/*',
-  ], rebuildHugo);
+  ], {
+    ignoreInitial: true,
+  }).on('all', rebuildHugo);
 
-  gulp.watch('./sass/**/*.scss', ['sass']);
+  chokidar.watch([
+    './sass/**/*.scss',
+  ], {
+    ignoreInitial: true,
+  }).on('all', rebuildSass);
 
   // Note that because running webpack in watch mode causes it to
   // do an initial build, this means that we'll actually be running
