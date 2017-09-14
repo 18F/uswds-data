@@ -6,3 +6,11 @@ $image-path: '../vendor/uswds/img';
 @import 'uswds';
 
 // New custom CSS rules can go here.
+
+.header-dark {
+  background: $color-primary-darkest;
+
+  .usa-logo a {
+    color: white;
+  }
+}
