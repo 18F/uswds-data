@@ -3,7 +3,27 @@
 $font-path: '../vendor/uswds/fonts';
 $image-path: '../vendor/uswds/img';
 
+$font-sans: 'Roboto', 'Helvetica' !default;
+$font-serif: 'Roboto', 'Helvetica' !default;
+
 @import 'uswds';
+
+@include font-face(
+  'Roboto',
+  'fonts/Roboto-Regular',
+  300,
+  normal,
+  $file-formats: ttf
+);
+
+@include font-face(
+  'Roboto',
+  'fonts/Roboto-Bold',
+  600,
+  bold,
+  $file-formats: ttf
+);
+
 
 // New custom CSS rules can go here.
 

@@ -41,6 +41,11 @@ gulp.task('sass', () => {
     .pipe(gulp.dest('./public/css'));
 });
 
+gulp.task('fonts', () => {
+  return gulp.src('./fonts/*')
+    .pipe(gulp.dest('./public/fonts'));
+});
+
 gulp.task('copy-uswds-assets', () => {
   return gulp.src(`${USWDS_DIST}/@(fonts|img)/**/**`)
     .pipe(gulp.dest('./public/vendor/uswds'));
@@ -80,6 +85,7 @@ gulp.task('watch', ['build'], _ => {
 gulp.task('static', [
   'sass',
   'webpack',
+  'fonts',
   'copy-uswds-assets',
 ]);
 
