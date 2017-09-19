@@ -14,3 +14,14 @@ $image-path: '../vendor/uswds/img';
     color: white;
   }
 }
+
+.usa-chart-bar {
+  fill: $color-primary;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: #000;
+  shape-rendering: crispEdges;
+}
