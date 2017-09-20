@@ -3,6 +3,13 @@
 $font-path: '../vendor/uswds/fonts';
 $image-path: '../vendor/uswds/img';
 
+$color-primary: #112E51;
+$color-primary-darker: #4B636E;
+$color-secondary: #FF7043;
+$color-primary-alt: #26C6DA;
+$color-primary-alt-darker: #0095A8;
+$color-primary-alt-darkest: #0095A8;
+$color-gray-lighter: #A7C0CD;
 $font-sans: 'Roboto', 'Helvetica' !default;
 $font-serif: 'Roboto', 'Helvetica' !default;
 
@@ -42,6 +49,20 @@ $font-serif: 'Roboto', 'Helvetica' !default;
 .axis path,
 .axis line {
   fill: none;
-  stroke: #000;
+  stroke: $color-gray-lighter;
   shape-rendering: crispEdges;
+}
+
+text.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+g.axis.axis--y > .domain {
+  display: none;
+}
+
+text {
+  font-family: 'Roboto', $helvetica;
+  font-size: 1.1rem;
 }
