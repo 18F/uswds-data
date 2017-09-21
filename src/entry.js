@@ -36,7 +36,7 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
               .attr('height','100%')
               .attr('width','100%');
   var g = svg.append('g').attr('transform',
-    'translate(' + margin.left + ',' + margin.top + ')');
+    'translate(' + 30 + ',' + margin.top + ')');
 
   var xAxis = d3.axisBottom(x)
                 .tickPadding(10)
@@ -78,9 +78,3 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
       .attr('x', -margin.left + 15)
       .text('Rate')
 });
-
-
-
-
-
-

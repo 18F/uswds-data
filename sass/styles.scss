@@ -66,3 +66,32 @@ text {
   font-family: 'Roboto', $helvetica;
   font-size: 1.1rem;
 }
+
+.usa-legend {
+  margin-left: 5.5rem;
+  margin-top: 1rem;
+}
+
+.usa-legend-text {
+  font-size: 1.4rem;
+
+  + .usa-legend-box {
+    margin-left: 2.5rem;
+  }
+}
+
+.usa-legend-box {
+  background-color: $color-primary;
+  display: inline-block;
+  height: 1.15rem;
+  vertical-align: middle;
+  width: 1.15rem;
+}
+
+.usa-legend-box:nth-child(3) {
+  background-color: $color-primary-alt;
+}
+
+.usa-chart-title {
+  margin-bottom: 3rem;
+}
