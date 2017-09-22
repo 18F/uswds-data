@@ -21,3 +21,12 @@ See additional info about color in the overall [accessibility guidelines](design
   <span class="usa-legend-box"></span>
     <span class="usa-legend-text">Virginia</span>
 </div>
+
+<h4 class="usa-chart-title">Uninsured Rate in Virginia, 2008–2015<sup>1</sup></h4>
+<div id="horizontal" class="chart" style="height: 350px; width: 100%;"></div>
+<div class="usa-legend">
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">U.S. Government</span>
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">Virginia</span>
+</div>
