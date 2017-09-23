@@ -1,13 +1,13 @@
-# U.S. Web Design Standards documentation
+# Data Design Standards documentation
 
-This repo includes code and documentation for the  U.S. Web Design Standards website. For information on the Standards (components) themselves, please visit [web-design-standards](https://github.com/18F/web-design-standards).
+This repo includes code and documentation for the  Data Design Standards website.
 
-Note that this README includes steps to pull the latest version of the Standards into your local instance of the documentation.
+Note that this README includes steps to pull the latest version of the Data Design Standards into your local instance of the documentation.
 
 
 ## Running locally
 
-The U.S. Web Design Standards documentation is built using Jekyll for the file framework, gulp for task management, and the node module for the Standards.
+The Data Standards documentation is built using Jekyll for the file framework, gulp for task management, and the node module for the Standards.
 
 
 ### Before you start
@@ -35,7 +35,7 @@ Now that all of your dependencies are installed, you can run your local server b
 npm start
 ```
 
-Go to `127.0.0.1:4000` in your browser — you should be viewing a local instance of [standards.usa.gov](https://standards.usa.gov).
+Go to `127.0.0.1:4000` in your browser — you should be viewing a local instance of the Data Design Standards.
 
 Here are a few other utility commands you may find useful:
 
@@ -62,36 +62,6 @@ Sometimes you will want to use the latest version of the `web-design-standards` 
 
 You are now using the latest version of the Standards via your cloned version on your local machine. To stop using this version, type `npm unlink uswds` from the _root level_ of the `web-design-standards-docs` directory.
 
-
-### Deployment and previews
-
-This site is deployed on [Federalist](https://federalist.fr.cloud.gov/), which automatically builds the site whenever commits are pushed to `master`.
-
-Federalist also builds public previews for each branch pushed to GitHub. For instance, to see the latest build of the `develop` branch, visit:
-
-https://federalist.fr.cloud.gov/preview/18f/web-design-standards-docs/develop/
-
-
-### Adding content to the "Updates" section
-
-See the [`_posts` directory](_posts/#readme) for instructions on adding updates.
-
-### Dynamic content
-
-Some of the content on the documentation site is dynamically fetched from
-GitHub. If you want to ensure that its API won't rate-limit you, you
-may want to
-[create an access token](https://github.com/blog/1509-personal-api-tokens)
-and assign it to your `GITHUB_ACCESS_TOKEN` environment variable.
-
-The dynamic content is stored in the `.jekyll_get_cache` directory and
-won't be re-fetched once it's cached there. However, this means that your
-data can get stale over time, so if you want to ensure that your site
-is using the very latest data, you'll want to clear the cache by running:
-
-```
-rm -rf .jekyll_get_cache
-```
 
 ## Contributing
 
