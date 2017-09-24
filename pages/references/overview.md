@@ -1,7 +1,7 @@
 ---
 permalink: /references/
 layout: styleguide
-title: References and further reading
+title: References
 category: References
 lead: More things to read
 ---

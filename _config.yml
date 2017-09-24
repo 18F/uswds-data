@@ -1,5 +1,6 @@
 # Site settings
 title:  Data Design Standards
+baseURL: 127.0.0.1 
 
 # this ensure that posts with future dates are published
 future: true

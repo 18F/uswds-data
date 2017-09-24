@@ -7,26 +7,20 @@ primary:
 mobile:
   - href: /design-principles/
   - href: /visualizations/
+    collapsible: true
   - href: /components/
     collapsible: true
   - href: /references/
 
-Design principles:
-  - text: Overview
-    href: /design-principles/
-  - href: /design-principles/blah/
-
 Visualization types:
   - text: Overview
     href: /visualizations/
-  - href: /visualizations/blah/
+  - href: /visualizations/bar-chart/
 
 Components:
-  - text: Overview
-    href: /components/
+  - href: /components/
   - href: /components/blah/
 
-References and further reading:
-  - text: Overview
-    href: /references/
+References:
+  - href: /references/
   - href: /references/blah/
