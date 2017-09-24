@@ -1,10 +1,8 @@
 <!-- Please feel free to remove whatever sections/lines in this aren’t relevant.
 
-Use the title line as the title of your pull request, then delete these lines. 
+Use the title line as the title of your pull request, then delete these lines.
 
 ## Title line template: [Title]: Brief description
-
-UI components: For issues that impact the look, feel, or functionality of the Standards themselves, please open an issue on the web-design-standards repo (https://github.com/18F/web-design-standards/issues/new). 
 
 -->
 
