@@ -74,6 +74,11 @@ body {
   }
 }
 
+.usa-sidenav-list a.usa-current {
+  border-left: 0.4rem solid $census-orange;
+  color: $census-grey;
+}
+
 // Fancy Horizontal Rule //
 
 .homepage-rule {
