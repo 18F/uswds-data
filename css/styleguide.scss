@@ -12,6 +12,16 @@ body {
 
 // USWDS Overrides
 
+h1 {
+  color: $census-grey;
+}
+
+*:focus,
+.usa-focus {
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
+}
+
 .usa-footer-secondary_section {
   background-color: $color-primary-alt-lightest;
 }
@@ -74,10 +84,19 @@ body {
   }
 }
 
-.usa-sidenav-list a.usa-current {
-  border-left: 0.4rem solid $census-orange;
+.usa-sidenav-list a {
   color: $census-grey;
+
+  &:hover {
+    color: $census-teal;
+  }
+
+  &.usa-current {
+    border-left: 0.4rem solid $census-orange;
+    color: $census-grey;
+  }
 }
+
 
 // Fancy Horizontal Rule //
 
@@ -119,7 +138,7 @@ body {
 
 .site-header {
 
-  background-color: $color-primary-darkest;
+  background-color: $census-navy;
 
   @include media($nav-width) {
     border-bottom: none;
@@ -270,7 +289,7 @@ body {
 
   @include media($nav-width) {
     background-color: $color-white;
-    border-bottom: 1px solid $color-gray-light;
+    border-bottom: 1px solid $census-grey-light;
     clear: both;
     display: block;
     height: $height-nav-secondary;
@@ -288,7 +307,7 @@ body {
   }
 
   a {
-    color: $color-gray-dark;
+    color: $census-grey;
     font-size: $site-nav-font-size;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -296,12 +315,12 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $color-primary;
+      color: $census-teal;
       text-decoration: underline;
     }
 
     &.usa-current {
-      color: $color-primary;
+      color: $census-teal;
     }
   }
 }

@@ -1,3 +1,11 @@
+// Census Colors
+$census-orange: #ff7043;
+$census-navy: #112E51; // background
+$census-grey: #4B636E; // nav text
+$census-grey-light: #78909C;
+$census-grey-lightest: #A7C0CD; // divider lines
+$census-teal: #008393; // link color
+$census-teal-light: #26C6DA;
 
 // USWDS Overrides
 $color-grid-dark:   #727272;
@@ -10,6 +18,12 @@ $external-href:     '[href^="http"]:not([href*=".gov"])';
 
 $z-nav-secondary: 10;
 
+$font-sans:           'Roboto', sans-serif !default;
+$font-serif:          'Roboto', sans-serif !default; // Currently using a sans font in place of all serifs
+
+$focus-outline:       2px dotted $census-grey;
+$focus-spacing:       3px;
+
 // Site image path, relative to /css/
 $site-image-path: '../img';
 
@@ -18,7 +32,3 @@ $font-light: 300;
 $site-nav-font-size: 1.7rem;
 $media-block-header-font-size: 1.7rem;
 $media-block-body-font-size: 1.5rem;
-
-// Census Colors
-$census-orange: #ff7043;
-$census-grey: #333A41;
