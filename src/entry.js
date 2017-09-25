@@ -4,7 +4,36 @@ var d3 = require('d3');
 var margin = { top: 30, right: 20, bottom: 30, left: 40 };
 var width = d3.select('.chart').node().offsetWidth - margin.right - margin.left;
 var height = 350 - margin.top - margin.bottom;
+var RATE_LABEL = 'Rate';
 
+function appendTable(d3selection, data) {
+    var table = d3selection.append('table');
+    var header = table.append('thead').append('tr');
+    var body = table.append('tbody');
+
+    header.selectAll('th')
+        .data(data.columns.map(function(d, i) {
+            return i === 0 ? d : d + ' ' + RATE_LABEL;
+        }))
+        .enter().append('th').text(function(d) { return d; });
+
+    body.selectAll('tr')
+        .data(data)
+        .enter().append('tr')
+        .selectAll('td')
+        .data(function(d) { return data.columns.map(function(label) { return d[label]; }); })
+        .enter().append('td').text(function(d) { return d; });
+
+    return table;
+}
+
+// tabular alternative (for screen readers)
+d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
+    for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
+    return d;
+}, function(error, data) {
+    appendTable(d3.select('#table'), data);
+});
 
 // vertical bars
 d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
@@ -30,7 +59,9 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
   x1.domain(keys).rangeRound([0, x.bandwidth()]);
   y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); }) + 50]).n
 
-  var svg = d3.select('.chart').append('svg')
+  var container = d3.select('#vertical');
+  var svg = container.append('svg')
+              .attr('aria-hidden', 'true')
               .attr('height','100%')
               .attr('width','100%');
   var g = svg.append('g').attr('transform',
@@ -74,7 +105,9 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
       .attr('class', 'label')
       .attr('y', -20)
       .attr('x', -margin.left + 15)
-      .text('Rate')
+      .text(RATE_LABEL)
+
+  appendTable(container, data).attr('class', 'usa-sr-only');
 });
 
 // horizontal bars
@@ -102,7 +135,9 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
   y.domain(data.map(function(d) { return d.Year; }));
   y1.domain(keys).rangeRound([0, y.bandwidth()]);
 
-  var svg = d3.select('#horizontal').append('svg')
+  var container = d3.select('#horizontal');
+  var svg = container.append('svg')
+              .attr('aria-hidden', 'true')
               .attr('height','100%')
               .attr('width','100%');
   var g = svg.append('g').attr('transform',
@@ -147,5 +182,7 @@ d3.csv('/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
       .attr('class', 'label')
       .attr('y', -20)
       .attr('x', -margin.left + 20)
-      .text('Rate')
+      .text(RATE_LABEL)
+
+  appendTable(container, data).attr('class', 'usa-sr-only');
 });
