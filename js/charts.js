@@ -146,7 +146,7 @@ if (!sel.empty()) {
                 .attr('height','100%')
                 .attr('width','100%');
     var g = svg.append('g').attr('transform',
-      'translate(' + 30 + ',' + margin.top + ')');
+      'translate(' + 30 + ',' + 10 + ')');
 
     var xAxis = d3.axisBottom(x)
                   .ticks(null, 's')
@@ -185,7 +185,7 @@ if (!sel.empty()) {
 
     g.append('text')
         .attr('class', 'label')
-        .attr('y', -20)
+        .attr('y', 0)
         .attr('x', -margin.left + 20)
         .text(RATE_LABEL)
 
