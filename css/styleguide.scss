@@ -16,6 +16,22 @@ h1 {
   color: $census-grey;
 }
 
+h2,
+h3,
+h4,
+h5 {
+  color: $color-base;
+}
+
+a {
+  color: $census-teal;
+
+  &:hover {
+    color: darken($census-teal, 10%);
+  }
+
+}
+
 *:focus,
 .usa-focus {
   outline: $focus-outline;
@@ -88,13 +104,18 @@ h1 {
   color: $census-grey;
 
   &:hover {
-    color: $census-teal;
+    color: $census-grey;
+    background-color: lighten($census-grey-lightest, 25%);
   }
 
   &.usa-current {
     border-left: 0.4rem solid $census-orange;
     color: $census-grey;
   }
+}
+
+.usa-sidenav-list li {
+  border-top: 1px solid $census-grey-lightest;
 }
 
 
@@ -289,7 +310,7 @@ h1 {
 
   @include media($nav-width) {
     background-color: $color-white;
-    border-bottom: 1px solid $census-grey-light;
+    border-bottom: 1px solid $census-grey-lightest;
     clear: both;
     display: block;
     height: $height-nav-secondary;
@@ -315,12 +336,12 @@ h1 {
     text-decoration: none;
 
     &:hover {
-      color: $census-teal;
+      color: $census-orange-dark;
       text-decoration: underline;
     }
 
     &.usa-current {
-      color: $census-teal;
+      color: $census-orange-dark;
     }
   }
 }
@@ -464,7 +485,8 @@ h2 + .tooltip {
 
 .site-subheading {
   @include h6;
-  color: $color-gray;
+  font-size: 1.2rem;
+  color: $census-grey;
   display: block;
   letter-spacing: 0.5px;
   margin-bottom: 0.6rem;
