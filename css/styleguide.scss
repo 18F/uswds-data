@@ -1,8 +1,15 @@
 ---
 ---
 
+// USWDS SASS variable overrides go here, before we import USWDS itself.
+
+$font-path: '../vendor/uswds/fonts';
+$image-path: '../vendor/uswds/img';
+
+
 // Imports
 @import 'variables';
+
 @import 'vendor/uswds/uswds';
 
 html,
@@ -1569,3 +1576,67 @@ article {
 
 
 } // article
+
+
+// Census specific CSS
+.header-dark {
+  background: $color-primary-darkest;
+
+  .usa-logo a {
+    color: white;
+  }
+}
+
+.usa-chart-bar {
+  fill: $color-primary;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $color-gray-lighter;
+  shape-rendering: crispEdges;
+}
+
+text.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+g.axis.axis--y > .domain {
+  display: none;
+}
+
+text {
+  font-family: 'Roboto', $helvetica;
+  font-size: 1.1rem;
+}
+
+.usa-legend {
+  margin-left: 5.5rem;
+  margin-top: 1rem;
+}
+
+.usa-legend-text {
+  font-size: 1.4rem;
+
+  + .usa-legend-box {
+    margin-left: 2.5rem;
+  }
+}
+
+.usa-legend-box {
+  background-color: $color-primary;
+  display: inline-block;
+  height: 1.15rem;
+  vertical-align: middle;
+  width: 1.15rem;
+}
+
+.usa-legend-box:nth-child(3) {
+  background-color: $color-primary-alt;
+}
+
+.usa-chart-title {
+  margin-bottom: 3rem;
+}

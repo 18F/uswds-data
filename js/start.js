@@ -1,5 +1,6 @@
 'use strict';
 
+require('./charts');
 require('./form-disable');
 require('./scroll-to-top-for-hash');
 require('./sidenav');
