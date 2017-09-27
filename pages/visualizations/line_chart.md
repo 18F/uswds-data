@@ -3,19 +3,14 @@ permalink: /visualizations/line-chart/
 layout: styleguide
 title: Line Charts
 category: Visualization types
-lead: Line charts are a good way to visualize data.
+lead: Straight lines between data points show continuous change in value, usually over time.
 ---
 
-
-## What
-On a line chart, the upward or downward slope of the line shows how the value of an item changes, usually over time.
-
-
-## Why
-A continuous line calls attention to overall trends rather than individual data points. Never use a line chart to compare non-numeric variables, such as country of birth. To compare data in separate categories, use a [bar chart](linked). 
+## When to use it
+Line charts are best at communicating trends over time rather than the value of distinct data points. Never use a line chart to compare non-numeric variables, such as country of birth or state of residence. To compare data in categories, use a [bar chart](linked). 
 
 
-Your raw data might look something like this:
+Your raw data might look like this:
 
 | State   | Unemployment rate in 1980 | Unemployment rate in 1990    | Unemployment rate in 2000    |
 |---------|---------------------------|------------------------------|------------------------------|
@@ -30,7 +25,7 @@ Your raw data might look something like this:
 
 ## Examples
 
-Use a focused-in chart to make small but important changes easier to see. Put the focused chart next to a main chart that shows the trend in full context. 
+Some changes over time are small but important. To make them easier to see, add a second, more focused chart, next to a primary chart showing the trend in its full context. 
 
 Put circles or dots on the line at each data point when the lengths of time between each data point is not the same.
 
