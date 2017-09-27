@@ -9,7 +9,7 @@ if (!sel.empty()) {
   var margin = { top: 30, right: 20, bottom: 30, left: 40 };
   var width = d3.select('.chart').node().offsetWidth - margin.right - margin.left;
   var height = 350 - margin.top - margin.bottom;
-  var RATE_LABEL = 'Rate';
+  var RATE_LABEL = 'Cost';
 
   function appendTable(d3selection, data) {
       var table = d3selection.append('table');
@@ -33,7 +33,7 @@ if (!sel.empty()) {
   }
 
   // tabular alternative (for screen readers)
-  d3.csv(window.location.origin + '/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/data/housing.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
@@ -41,7 +41,7 @@ if (!sel.empty()) {
   });
 
   // vertical bars
-  d3.csv(window.location.origin + '/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/data/housing.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
@@ -60,7 +60,7 @@ if (!sel.empty()) {
     var z = d3.scaleOrdinal()
         .range(['#112E51', '#26C6DA']);
 
-    x.domain(data.map(function(d) { return d.Year; }));
+    x.domain(data.map(function(d) { return d.state; }));
     x1.domain(keys).rangeRound([0, x.bandwidth()]);
     y.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); }) + 50]).n
 
@@ -70,14 +70,16 @@ if (!sel.empty()) {
                 .attr('height','100%')
                 .attr('width','100%');
     var g = svg.append('g').attr('transform',
-      'translate(' + 30 + ',' + margin.top + ')');
+      'translate(' + 40 + ',' + margin.top + ')');
 
     var xAxis = d3.axisBottom(x)
                   .tickPadding(10)
                   .tickSize(0);
     var yAxis = d3.axisLeft(y)
                   .ticks(null, 's')
-                  .tickSize(-width - margin.right);
+                  .tickSize(-width - margin.right)
+                  .tickFormat(d3.format('$,.2r'));
+
 
     g.append('g')
         .attr('class', 'axis axis--y')
@@ -96,7 +98,7 @@ if (!sel.empty()) {
         .selectAll('g')
         .data(data)
         .enter().append('g')
-          .attr('transform', function(d) { return 'translate(' + x(d.Year) + ',0)'; })
+          .attr('transform', function(d) { return 'translate(' + x(d.state) + ',0)'; })
         .selectAll('rect')
         .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
         .enter().append('rect')
@@ -116,15 +118,15 @@ if (!sel.empty()) {
   });
 
   // horizontal bars
-  d3.csv(window.location.origin + '/data/uninsured_rate_in_virginia.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/data/education.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
-    margin.left = 50;
+    margin.left = 70;
     var keys = data.columns.slice(1);
 
     var x = d3.scaleLinear()
-        .rangeRound([0, width]);
+        .rangeRound([0, width - margin.left]);
 
     var y1 = d3.scaleBand()
         .padding(0);
@@ -136,8 +138,8 @@ if (!sel.empty()) {
     var z = d3.scaleOrdinal()
         .range(['#112E51', '#26C6DA']);
 
-    x.domain([0, d3.max(data, function(d) { return d3.max(keys, function(key) { return d[key]; }); }) + 50]).n
-    y.domain(data.map(function(d) { return d.Year; }));
+    x.domain([0, 1]).n
+    y.domain(data.map(function(d) { return d.state; }));
     y1.domain(keys).rangeRound([0, y.bandwidth()]);
 
     var container = d3.select('#horizontal');
@@ -146,11 +148,12 @@ if (!sel.empty()) {
                 .attr('height','100%')
                 .attr('width','100%');
     var g = svg.append('g').attr('transform',
-      'translate(' + 30 + ',' + 10 + ')');
+      'translate(' + 70 + ',' + 10 + ')');
 
     var xAxis = d3.axisBottom(x)
                   .ticks(null, 's')
-                  .tickSize(-width - margin.left);
+                  .tickSize(-width - margin.left)
+                  .tickFormat(d3.format(',.1%'));
     var yAxis = d3.axisLeft(y)
                   .tickPadding(10)
                   .tickSize(0);
@@ -173,7 +176,7 @@ if (!sel.empty()) {
         .selectAll('g')
         .data(data)
         .enter().append('g')
-          .attr('transform', function(d) { return 'translate(15, ' + y(d.Year) + ')'; })
+          .attr('transform', function(d) { return 'translate(15, ' + y(d.state) + ')'; })
         .selectAll('rect')
         .data(function(d) { return keys.map(function(key) { return {key: key, value: d[key]}; }); })
         .enter().append('rect')
@@ -182,12 +185,6 @@ if (!sel.empty()) {
           .attr('height', y1.bandwidth())
           .attr('width', function(d) { return x(d.value); })
           .attr('fill', function(d) { return z(d.key); });
-
-    g.append('text')
-        .attr('class', 'label')
-        .attr('y', 0)
-        .attr('x', -margin.left + 20)
-        .text(RATE_LABEL)
 
     appendTable(container, data).attr('class', 'usa-sr-only');
   });

@@ -1633,10 +1633,12 @@ text {
   width: 1.15rem;
 }
 
-.usa-legend-box:nth-child(3) {
+.usa-legend-box:nth-child(3),
+.usa-legend-box:nth-child(4) {
   background-color: $color-primary-alt;
 }
 
 .usa-chart-title {
   margin-bottom: 3rem;
+  margin-top: 4rem;
 }
