@@ -48,7 +48,7 @@ if (!sel.empty()) {
     var keys = data.columns.slice(1);
 
     var x = d3.scaleBand()
-        .rangeRound([0, width + margin.right])
+        .rangeRound([0, 980])
         .padding(0.25);
 
     var x1 = d3.scaleBand()
@@ -126,7 +126,7 @@ if (!sel.empty()) {
     var keys = data.columns.slice(1);
 
     var x = d3.scaleLinear()
-        .rangeRound([0, width - margin.left]);
+        .rangeRound([0, width - 24]);
 
     var y1 = d3.scaleBand()
         .padding(0);

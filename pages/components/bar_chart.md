@@ -13,7 +13,7 @@ Accessibility for vertical bar charts lorem ipsum dolor sit amet, consectetur ad
 See additional info about color in the overall [accessibility guidelines](design-principals/accessibility/).
 
 <h4 class="usa-chart-title">Home ownership and rental costs across the southwest</h4>
-<div id="vertical" class="chart" style="height: 350px; width: 100%;"></div>
+<div id="vertical" class="chart" style="height: 350px; width: 860px;"></div>
 <div class="usa-legend" aria-hidden="true">
   <span class="usa-legend-box"></span>
     <span class="usa-legend-text">Median selected monthly owner costs -with a mortgage, 2011-2015</span>
@@ -22,7 +22,7 @@ See additional info about color in the overall [accessibility guidelines](design
 </div>
 
 <h4 class="usa-chart-title">Education rates across the southwest</h4>
-<div id="horizontal" class="chart" style="height: 350px; width: 100%;"></div>
+<div id="horizontal" class="chart" style="height: 330px; width: 880px;"></div>
 <div class="usa-legend" aria-hidden="true">
   <span class="usa-legend-box"></span>
     <span class="usa-legend-text">High school graduate or higher, percent of persons age 25 years+, 2011-2015</span>
