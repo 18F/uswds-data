@@ -3,18 +3,14 @@ permalink: /visualizations/bar-chart/
 layout: styleguide
 title: Bar Charts
 category: Visualization types
-lead: Bar charts are a good way to visualize data.
+lead: Bar charts use horizontal or vertical columns to show relationships among different categories of data. The columns can be arranged either along the [horizontal](anchor link to horizontal subsection) or [vertical](link to subsection) axis. 
 ---
-
-## What
-[Brief description] Bar charts use columns to show relationships among different categories of data. The columns can be arranged either along the [horizontal](anchor link to horizontal subsection) or [vertical](link to subsection) axis. Sorting the bar chart from higher to lower (or lower to higher) values can help people see those relationships more easily.
-
-Bar charts can show time series data only if the data points are all at equal intervals. If the time periods between data measurements are not identical, use a [line chart](link).
 
 [Illustration of horizontal and vertical bar chart]
 
-## Why
-Use bar charts to compare values in distinct groups [2, 8].
+## When to use it
+Use bar charts to compare values grouped into separate categories. Use bar charts to show time series data only if the data points are all at equal intervals. If the length of time between measurements is not the same for every data point and your variable is one that changes continously over time (such as employment rate or revenue) use a [line chart](link).
+
 
 Your raw data might look something like this:
 
@@ -26,23 +22,21 @@ Your raw data might look something like this:
 
 
 ## The basics
-- Maintain space between bars so they’re easy to distinguish.
-- Sort bars based on the data values being represented.
+- Maintain space between bars so they’re easy to tell apart.
 - Use a single color to represent all data representing the same measurement.
 - Start numeric axis at zero where possible.
 - Include a title, source, and labels written in plain language.
 - Maintain consistency and dimensions in look and feel when representing multiple, similar bar charts on a page.
 - Avoid visual elements like bar outlines, extra grid lines, borders and graphics.
 
-Examples
+## Examples
 
-To highlight the lowest values, the shortest bar should be at the top of the chart.
-
-
-A bar chart with data representing the same measurement for two different years.
+A bar charts can also use  data representing the same measurement for two different years.
 
 
-A bar chart showing a negative value.
+Bar charts can show negative values.
+
+The order in which you put your items tells people how to interpret them. Put the shortest bar first to highlight the lowest values. To highlight the highest values, put the longest bar first. 
 
 
 ## Things to avoid
