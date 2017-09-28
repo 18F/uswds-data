@@ -3,24 +3,20 @@ permalink: /visualizations/area-chart/
 layout: styleguide
 title: Area Charts
 category: Visualization types
-lead: Area charts, similar to line charts, illustrate volumes of data under each line.  
+lead: Area charts resemble line charts but highlight the amount of data _under_ each line.  
 ---
 
-[Illustration]
+## When to use them
 
-## When to use it
-
-<<<<<<< HEAD
 Your raw data might look like this:
-=======
 
 ## The basics
-- 
+
 
 ## Examples
 
 ## Things to avoid
-- 
+
 
 
 
