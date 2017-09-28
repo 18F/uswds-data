@@ -1,7 +1,7 @@
 ---
 permalink: /
 title: Census Data Design Guidelines
-layout: page
+layout: homepage
 ---
 
 This handy guide is designed to help communicate the wide variety of data and information generated every day by the U.S. Census Bureau into easy-to-understand, visual references for a general audience.  The guide starts by identifying some common guidelines and principles to keep in mind when designing data visualizations using U.S. Census data, and further examines some common types. We focus first on the most common data visualizations first, with the idea that this guide can be easily expanded once a clear foundation is established.
