@@ -15,8 +15,11 @@ mobile:
 Visualization types:
   - text: Overview
     href: /visualizations/
+  - href: /visualizations/area-chart/
   - href: /visualizations/bar-chart/
   - href: /visualizations/line-chart/
+  - href: /visualizations/scatterplot/
+  - href: /visualizations/table/
 
 Components:
   - href: /components/
