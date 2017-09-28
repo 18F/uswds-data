@@ -3,32 +3,29 @@ permalink: /visualizations/table/
 layout: styleguide
 title: Tables
 category: Visualization types
-lead: Sometimes overlooked, well designed tables can be a powerful way to visualize data.  
+lead: Sometimes overlooked, well organized tables can be a powerful way to share data.  
 ---
 
 [Illustration]
 
 ## When to use it
-Tables can be designed to not only share raw data, but to tell a story about it.  Organized in rows and columns, tables can be organized to compare real values between different variables. 
+Tables present data in the form of two or more “objects,” or rows, that share two or more “values," or columns. The rows and columns of tables give direct access to the real values of different variables. Tables can tell a story as well as show the raw data.
 
-Tables are generally suitable only for data: two or more “objects” (rows) that share two or more “values” (columns). In tables, column widths are the same for all rows, which can make them easier to scan visually. Tables are easily navigable for sightless users so long as the content is organized in a logical way. Here are some other guidelines to consider:
+Tables are one of the simplest ways to share even very large data sets. People using screen readers can access tables as long as their contents are organized logically. However, large tables are hard to skim quickly, which is one reason why charts and graphs are so popular. 
 
-<<<<<<< HEAD
-Your raw data might look like this:
 =======
 
 ## The basics
-- Use column labels that clearly identify what the data represent.  Avoid using internal abbreviations that won't be understandable to your reader, or system-generated labels that aren't intelligible.
-- Text values within cells should be left-aligned, and numeric values right-aligned.  
-- Use of decimals or symbols within your data should be consistent.  Truncating data should be avoided. 
-- Sorting of values - for example highest to lowest value - should be clearly indicated in the table. 
+- Labels should clearly describe what columns mean. For non-experts, rewrite system-generated labels that use abbreviations or overly technical words.
+- Left-align text values within cells. Right-align numeric values.   
+- Keep the presentation of decimals or symbols consistent. 
+- Try not to shorten or cut off data. 
+- Make it clear if you are deliberately ordering values, for example from highest to lowest.
+- Choose fonts that make it easy to tell apart numbers at small sizes. 
 
 ## Examples
 
 ## Things to avoid
-- Where possible, avoid the use of heavy table borders, row shading or other visual elements that don't add value to the interpretation of the data.  
-- Fonts should be chosen for legibility and uniformness for representing data - avoid the use of fonts better suited for text, or special fonts. 
-
-### References
-For more reading on this topic, see  https://pages.18f.gov/content-guide/technical-and-interface-writing/
+- Heavy table borders, row shading or other visual elements that don't help people interpret the data 
+- Fonts better suited for headlines or decoration.
 
