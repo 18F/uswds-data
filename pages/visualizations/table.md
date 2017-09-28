@@ -13,8 +13,6 @@ Tables present data in the form of two or more “objects,” or rows, that shar
 
 Tables are one of the simplest ways to share even very large data sets. People using screen readers can access tables as long as their contents are organized logically. However, large tables are hard to skim quickly, which is one reason why charts and graphs are so popular. 
 
-=======
-
 ## The basics
 - Labels should clearly describe what columns mean. For non-experts, rewrite system-generated labels that use abbreviations or overly technical words.
 - Left-align text values within cells. Right-align numeric values.   
