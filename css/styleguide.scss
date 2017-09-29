@@ -19,10 +19,7 @@ body {
 
 // USWDS Overrides
 
-h1 {
-  color: $census-grey;
-}
-
+h1,
 h2,
 h3,
 h4,
@@ -31,10 +28,10 @@ h5 {
 }
 
 a {
-  color: $census-teal;
+  color: $color-primary-darker;
 
   &:hover {
-    color: darken($census-teal, 10%);
+    color: darken($color-primary-darker, 10%);
   }
 
 }
