@@ -1321,45 +1321,6 @@ code {
 }
 
 // Page styles
-.page-ui-components {
-
-  .usa-font-lead {
-    &:first-of-type {
-      margin-top: 3.2rem;
-    }
-  }
-}
-
-.page-design-principles {
-  @include media($medium-screen) {
-    .main-content .usa-grid-full {
-      @include margin(4rem null 3rem null);
-    }
-  }
-
-  // full-width styles. TODO: look into making a template instead.
-  .main-content {
-    width: 100%;
-  }
-
-  .styleguide-content {
-    @include margin(null auto);
-  }
-
-  .sidenav {
-    display: none;
-  }
-
-  img {
-    max-width: 18.4rem;
-  }
-
-  .footer-text-one-half {
-    @include media($medium-screen) {
-      @include span-columns(6);
-    }
-  }
-}
 
 .link-download {
   display: table;
@@ -1384,34 +1345,6 @@ code {
 .link_group-download {
   .link-download {
     margin-bottom: 1rem;
-  }
-}
-
-.page-product-roadmap,
-.page-for-developers,
-.page-for-designers,
-.page-component-maturity-scale {
-  .usa-content {
-    > ul:not(.usa-content-list) {
-      max-width: $text-max-width;
-    }
-  }
-}
-
-.page-for-developers,
-.page-for-designers,
-.page-product-roadmap,
-.page-component-maturity-scale,
-.page-research {
-  h2 {
-    color: $color-primary-darker;
-  }
-}
-
-.page-product-roadmap {
-  .usa-label {
-    display: inline-block;
-    position: relative;
   }
 }
 
