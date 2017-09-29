@@ -4,14 +4,14 @@ layout: default
 
 <main id="main-content" class="main-content">
 
-  <div class="styleguide-content usa-content">
-    <header>
+  <div class="styleguide-content usa-grid">
+    <header class="docspage-header usa-offset-one-fourth">
       <h1 id="{{ page.title | slugify }}">{{ page.title }}</h1>
+      {% include lead.html text=page.lead %}
     </header>
-
-    {% include lead.html text=page.lead %}
-
-    {{ content }}
+    <div class="usa-content usa-width-two-thirds usa-offset-one-fourth">
+      {{ content }}
+    </div>
   </div>
 
 </main>
