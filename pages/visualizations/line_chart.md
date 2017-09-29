@@ -28,7 +28,6 @@ Line charts are best at communicating trends over time rather than the value of 
   <span class="usa-legend-box" style="background-color: rgb(31, 119, 180);"></span>
     <span class="usa-legend-text">
     New York City, NY</span>
-  <br />
   <span class="usa-legend-box" style="background-color: rgb(255, 127, 14);"></span>
     <span class="usa-legend-text">Philadelphia, PA</span>
   <span class="usa-legend-box" style="background-color: rgb(44, 160, 44);"></span>
