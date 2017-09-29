@@ -12,6 +12,7 @@ lead: This guide draws on the following works.
 - IBM. [Data visualization](https://www.ibm.com/design/language/experience/data-visualization/chart-models). In _IBM Design Language_
 - International Business Communication Standards Association. [IBCS Standards](https://www.hichert.com/standards/).
 - Kelleher, C., Wagener, T.. 2011. [Ten guidelines for effective data visualization in scientific publications](doi:10.1016/j.envsoft.2010.12.006). _Environmental Modelling & Software_.
+- UK Government Statistical Service. 2017. [Effective tables and graphs in official statistics: Guidance for producers](https://gss.civilservice.gov.uk/wp-content/uploads/2017/01/GUIDANCE-document-Effective-charts-and-tables-in-official-statistics-Version-2.0-Jan2017.pdf). Version 2. 
 - UK Office of National Statistics. [Data visualisation](http://style.ons.gov.uk/category/data-visualisation/). In _ONS Styleguide_.
 - US Census Bureau. 2005. _Presentation of Statistical Graphics: Census Bureau Guideline._ V 1.0
 - US Census Bureau. 2011. _Recommendation for Data Visualizations of Economic Program Data._
