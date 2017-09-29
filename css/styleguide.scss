@@ -1129,8 +1129,6 @@ code {
   }
 }
 
-// Custom tooltip styles -------------- //
-
 // Tooltip container
 .tooltip {
   display: inline-block;
@@ -1182,48 +1180,6 @@ code {
 
   @include media($medium-screen) {
     margin-bottom: 5.9rem;
-  }
-}
-
-// Demo fixed footer
-.demo-footer {
-  background-color: $color-gray-dark;
-  box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.5);
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
-  .usa-button {
-    background-image: url('#{$site-image-path}/angle-arrow-left-inverse.png');
-    background-image: url('#{$site-image-path}/angle-arrow-left-inverse.svg');
-    background-repeat: no-repeat;
-    background-position: left 2rem center;
-    background-size: 1rem;
-    padding-left: 3.3rem;
-
-    @include media($medium-screen) {
-      @include margin(0 1.5rem 0 null);
-    }
-  }
-}
-
-.demo-footer-title {
-  @include margin(0 null 0.7rem null);
-  color: $color-white;
-  display: inline-block;
-
-  @include media($medium-screen) {
-    @include margin(1em null);
-  }
-}
-
-.demo-footer-content {
-  @include margin(null $site-margins-mobile);
-
-  @include media($medium-screen) {
-    @include margin(null $site-margins);
   }
 }
 
@@ -1288,6 +1244,9 @@ article {
   fill: $color-primary;
 }
 
+.usa-content h2 {
+  max-width: $text-max-width;
+}
 .axis path,
 .axis line {
   fill: none;
