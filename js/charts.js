@@ -191,7 +191,7 @@ if (!sel.empty()) {
 }
 
 d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function(erro, data, columns) {
-  var x = d3.scaleLinear().range([0, width + 14]),
+  var x = d3.scaleLinear().range([0, width + 10]),
       y = d3.scaleLinear().range([height, 0]),
       z = d3.scaleOrdinal(d3.schemeCategory10);
   var line = d3.line()
@@ -226,6 +226,7 @@ d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function
                 .tickFormat(d3.format("d"));
 
   var yAxis = d3.axisLeft(y)
+                .tickFormat(d3.format(".2s"))
                 .tickSize(-width - margin.right);
 
   g.append("g")
