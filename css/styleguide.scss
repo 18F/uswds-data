@@ -1247,6 +1247,7 @@ article {
 .usa-content h2 {
   max-width: $text-max-width;
 }
+
 .axis path,
 .axis line {
   fill: none;
@@ -1303,4 +1304,13 @@ text {
   fill: none;
   stroke: steelblue;
   stroke-width: 1.5px;
+}
+
+.homepage-header {
+  margin-bottom: 5rem;
+}
+
+.homepage-header h1 {
+  margin-bottom: 0;
+  width: 35rem;
 }
