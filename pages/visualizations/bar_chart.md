@@ -6,20 +6,42 @@ category: Visualization types
 lead: Bar charts use horizontal or vertical columns to show relationships among different categories of data. The columns can be arranged either along the [horizontal](anchor link to horizontal subsection) or [vertical](link to subsection) axis. 
 ---
 
-[Illustration of horizontal and vertical bar chart]
+<h4 class="usa-chart-title">Home ownership and rental costs across the southwest</h4>
+<div id="vertical" class="chart" style="height: 350px; width: 860px;"></div>
+<div class="usa-legend" aria-hidden="true">
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">Median selected monthly owner costs -with a mortgage, 2011-2015</span>
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">Median gross rent, 2011-2015</span>
+</div>
+
+<h4 class="usa-chart-title">Education rates across the southwest</h4>
+<div id="horizontal" class="chart" style="height: 330px; width: 880px;"></div>
+<div class="usa-legend" aria-hidden="true">
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">High school graduate or higher, percent of persons age 25 years+, 2011-2015</span>
+  <br />
+  <span class="usa-legend-box"></span>
+    <span class="usa-legend-text">Bachelor's degree or higher, percent of persons age 25 years+, 2011-2015</span>
+</div>
+
+<h4 class="usa-chart-title">Tabular alternatives</h4>
+
+Due to the fact that bar charts are semantically similar to tabular data,
+the unpredictable support for accessible SVGs across browsers and
+screen readers, and the fact that many screen readers contain specialized
+controls for navigating tabular data easily, we recommend hiding
+graphical bar charts from screen readers and providing a tabular
+alternative for visually impaired users.
+
+A screen-reader only tabular version of the data is included with each
+SVG on this page to assist visually impaired users. Below is the
+tabular version made visible, for reference purposes.
+
+<div id="table"></div>
 
 ## When to use it
 Use bar charts to compare values grouped into separate categories. Use bar charts to show time series data only if the data points are all at equal intervals. If the length of time between measurements is not the same for every data point and your variable is one that changes continously over time (such as employment rate or revenue) use a [line chart](link).
-
-
-Your raw data might look something like this:
-
-| State                                                  | Unemployment rate in 1980 | Unemployment rate in 1990    |
-|--------------------------------------------------------|---------------------------|------------------------------|
-| Number of Employees                                    |                           |                              |
-| Revenue (Total $'s)                                    |                           |                              |
-| Percent (%) of Revenue from SBIR's (from all agencies) |                           |                              |
-
 
 ## The basics
 - Maintain space between bars so they’re easy to tell apart.
