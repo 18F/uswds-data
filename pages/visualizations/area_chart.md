@@ -1,7 +1,7 @@
 ---
 permalink: /visualizations/area-chart/
 layout: styleguide
-title: Area Charts
+title: Area charts
 category: Visualization types
 lead: Area charts resemble line charts but highlight the amount of data _under_ each line.  
 ---
@@ -16,7 +16,3 @@ Your raw data might look like this:
 ## Examples
 
 ## Things to avoid
-
-
-
-

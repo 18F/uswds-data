@@ -13,6 +13,7 @@ lead: This guide draws on the following works.
 - International Business Communication Standards Association. [IBCS Standards](https://www.hichert.com/standards/).
 - Kelleher, C., Wagener, T.. 2011. [Ten guidelines for effective data visualization in scientific publications](doi:10.1016/j.envsoft.2010.12.006). _Environmental Modelling & Software_.
 - UK Office of National Statistics. [Data visualisation](http://style.ons.gov.uk/category/data-visualisation/). In _ONS Styleguide_.
+- UK Government Statistical Service. 2017. [Effective tables and graphs in official statistics: Guidance for producers](https://www.statisticsauthority.gov.uk/wp-content/uploads/2016/11/Effective-charts-and-tables-in-official-statistics-Version-2.0.pdf). 
 - US Census Bureau. 2005. _Presentation of Statistical Graphics: Census Bureau Guideline._ V 1.0
 - US Census Bureau. 2011. _Recommendation for Data Visualizations of Economic Program Data._
 - Zoss, Angela. 2014. Top Ten Dos and Don’ts for Charts and Graphs.

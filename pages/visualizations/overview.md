@@ -6,5 +6,6 @@ category: Visualization types
 lead: Census data design guidelines
 ---
 
-## Why it matters
-Understanding data is crucial to public education, debate, and decision-making. Done well, data visualizations  help people more precisely understand  the issues that matter to them. They are not only informative but also beautiful.  one poorly, data visualizations misrepresent research findings and lead people to incorrect conclusions. Moving from basic principles to best practices, this brief guide to visualizing United States Census data introduces the art and and science of drawing clear explanations from  complex data.
+Drawing clear explanations from complex data is not easy. People should be able to interpret the data correctly with a minimal amount of supporting information. Selecting the right visualization for your data helps.
+
+This guide will initially include just a few of the most common charts and graphs. We welcome your ideas and suggestions for expanding it in the future.
