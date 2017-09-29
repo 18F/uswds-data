@@ -191,8 +191,7 @@ if (!sel.empty()) {
 }
 
 d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function(erro, data, columns) {
-  console.log('data', data);
-  var x = d3.scaleLinear().range([0, width + 15]),
+  var x = d3.scaleLinear().range([0, width + 14]),
       y = d3.scaleLinear().range([height, 0]),
       z = d3.scaleOrdinal(d3.schemeCategory10);
   var line = d3.line()
@@ -208,7 +207,6 @@ d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function
     };
   });
 
-  console.log(cities);
 
   x.domain(d3.extent(data, function(d) { return parseInt(d.date); }));
   y.domain([
@@ -249,12 +247,4 @@ d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function
       .attr("class", "line")
       .attr("d", function(d) { return line(d.values); })
       .style("stroke", function(d) { return z(d.id); });
-
-  city.append("text")
-      .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
-      .attr("transform", function(d) { return "translate(" + x(parseInt(d.value.date)) + "," + y(d.value.population) + ")"; })
-      .attr("x", 3)
-      .attr("dy", "0.35em")
-      .style("font", "10px sans-serif")
-      .text(function(d) { return d.id; });
 });
