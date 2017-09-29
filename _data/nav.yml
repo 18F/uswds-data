@@ -22,8 +22,11 @@ Visualization types:
   - href: /visualizations/table/
 
 Components:
-  - href: /components/
+  - text: Overview
+    href: /components/
+  - href: /components/colors/
+  - href: /components/graphic-components/
+  - href: /components/text-styles/
 
 References:
   - href: /references/
-  - href: /references/blah/
