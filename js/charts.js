@@ -189,3 +189,72 @@ if (!sel.empty()) {
     appendTable(container, data).attr('class', 'usa-sr-only');
   });
 }
+
+d3.csv(window.location.origin + '/data/east_coast_populations.csv', function(erro, data, columns) {
+  console.log('data', data);
+  var x = d3.scaleLinear().range([0, width + 15]),
+      y = d3.scaleLinear().range([height, 0]),
+      z = d3.scaleOrdinal(d3.schemeCategory10);
+  var line = d3.line()
+      .curve(d3.curveBasis)
+      .x(function(d) { return x(parseInt(d.date)); })
+      .y(function(d) { return y(parseInt(d.population)); });
+  var cities = data.columns.slice(1).map(function(id) {
+    return {
+      id: id,
+      values: data.map(function(d) {
+        return {date: parseInt(d.date), population: parseInt(d[id])};
+      })
+    };
+  });
+
+  console.log(cities);
+
+  x.domain(d3.extent(data, function(d) { return parseInt(d.date); }));
+  y.domain([
+    d3.min(cities, function(c) { return d3.min(c.values, function(d) { return parseInt(d.population); }); }),
+    d3.max(cities, function(c) { return d3.max(c.values, function(d) { return parseInt(d.population); }); })
+  ]);
+  z.domain(cities.map(function(c) { return c.id; }));
+
+  var container = d3.select('#line');
+  var svg = container.append('svg')
+              .attr('aria-hidden', 'true')
+              .attr('height','100%')
+              .attr('width','100%');
+  var g = svg.append("g")
+         .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+  var xAxis = d3.axisBottom(x)
+                .tickFormat(d3.format("d"));
+
+  var yAxis = d3.axisLeft(y)
+                .tickSize(-width - margin.right);
+
+  g.append("g")
+      .attr("class", "axis axis--x")
+      .attr("transform", "translate(0," + height + ")")
+      .call(xAxis);
+
+  g.append("g")
+      .attr("class", "axis axis--y")
+      .call(yAxis);
+
+  var city = g.selectAll(".city")
+    .data(cities)
+    .enter().append("g")
+      .attr("class", "city");
+
+  city.append("path")
+      .attr("class", "line")
+      .attr("d", function(d) { return line(d.values); })
+      .style("stroke", function(d) { return z(d.id); });
+
+  city.append("text")
+      .datum(function(d) { return {id: d.id, value: d.values[d.values.length - 1]}; })
+      .attr("transform", function(d) { return "translate(" + x(parseInt(d.value.date)) + "," + y(d.value.population) + ")"; })
+      .attr("x", 3)
+      .attr("dy", "0.35em")
+      .style("font", "10px sans-serif")
+      .text(function(d) { return d.id; });
+});
