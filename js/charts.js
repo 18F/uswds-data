@@ -33,7 +33,7 @@ if (!sel.empty()) {
   }
 
   // tabular alternative (for screen readers)
-  d3.csv(window.location.origin + '/data/housing.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/img/data/housing.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
@@ -41,7 +41,7 @@ if (!sel.empty()) {
   });
 
   // vertical bars
-  d3.csv(window.location.origin + '/data/housing.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/img/data/housing.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
@@ -118,7 +118,7 @@ if (!sel.empty()) {
   });
 
   // horizontal bars
-  d3.csv(window.location.origin + '/data/education.csv', function(d, i, columns) {
+  d3.csv(window.location.origin + '/img/data/education.csv', function(d, i, columns) {
       for (var i = 1, n = columns.length; i < n; ++i) d[columns[i]] = +d[columns[i]];
       return d;
   }, function(error, data) {
@@ -190,7 +190,7 @@ if (!sel.empty()) {
   });
 }
 
-d3.csv(window.location.origin + '/data/east_coast_populations.csv', function(erro, data, columns) {
+d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function(erro, data, columns) {
   console.log('data', data);
   var x = d3.scaleLinear().range([0, width + 15]),
       y = d3.scaleLinear().range([height, 0]),
