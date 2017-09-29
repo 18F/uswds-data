@@ -1307,19 +1307,40 @@ text {
 }
 
 .homepage-header {
-  margin-bottom: 5rem;
-}
-
-.homepage-header h1 {
-  margin-bottom: 0;
-  width: 35rem;
-}
-
-.docspage-header {
   margin-bottom: 6rem;
-  // background-color: lighten($census-teal-light, 40%);
 }
 
-.docspage-header h1 {
-  margin-bottom: 0rem;
+@include media($medium-screen) {
+  .homepage-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .page-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@include media($large-screen) {
+  .page-content {
+    margin-left: 25%;
+  }
+
+  .docspage-header {
+    margin-bottom: 6rem;
+  }
+
+  .docspage-header h1 {
+    margin-bottom: 0rem;
+  }
+
+  .homepage-content {
+    margin-left: 25%;
+  }
+
+  .homepage-header h1 {
+    margin-bottom: 0;
+    max-width: 35rem;
+  }
 }
