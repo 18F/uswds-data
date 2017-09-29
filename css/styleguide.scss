@@ -1,8 +1,15 @@
 ---
 ---
 
+// USWDS SASS variable overrides go here, before we import USWDS itself.
+
+$font-path: '../vendor/uswds/fonts';
+$image-path: '../vendor/uswds/img';
+
+
 // Imports
 @import 'variables';
+
 @import 'vendor/uswds/uswds';
 
 html,
@@ -11,6 +18,29 @@ body {
 }
 
 // USWDS Overrides
+
+h1,
+h2,
+h3,
+h4,
+h5 {
+  color: $color-base;
+}
+
+a {
+  color: $color-primary-darker;
+
+  &:hover {
+    color: darken($color-primary-darker, 10%);
+  }
+
+}
+
+*:focus,
+.usa-focus {
+  outline: $focus-outline;
+  outline-offset: $focus-spacing;
+}
 
 .usa-footer-secondary_section {
   background-color: $color-primary-alt-lightest;
@@ -74,6 +104,25 @@ body {
   }
 }
 
+.usa-sidenav-list a {
+  color: $census-grey;
+
+  &:hover {
+    color: $census-grey;
+    background-color: lighten($census-grey-lightest, 25%);
+  }
+
+  &.usa-current {
+    border-left: 0.4rem solid $census-orange;
+    color: $census-grey;
+  }
+}
+
+.usa-sidenav-list li {
+  border-top: 1px solid $census-grey-lightest;
+}
+
+
 // Fancy Horizontal Rule //
 
 .homepage-rule {
@@ -114,7 +163,7 @@ body {
 
 .site-header {
 
-  background-color: $color-primary-darkest;
+  background-color: $census-navy;
 
   @include media($nav-width) {
     border-bottom: none;
@@ -265,7 +314,7 @@ body {
 
   @include media($nav-width) {
     background-color: $color-white;
-    border-bottom: 1px solid $color-gray-light;
+    border-bottom: 1px solid $census-grey-lightest;
     clear: both;
     display: block;
     height: $height-nav-secondary;
@@ -283,7 +332,7 @@ body {
   }
 
   a {
-    color: $color-gray-dark;
+    color: $census-grey;
     font-size: $site-nav-font-size;
     font-weight: normal;
     letter-spacing: 0.3px;
@@ -291,12 +340,12 @@ body {
     text-decoration: none;
 
     &:hover {
-      color: $color-primary;
+      color: $census-orange-dark;
       text-decoration: underline;
     }
 
     &.usa-current {
-      color: $color-primary;
+      color: $census-orange-dark;
     }
   }
 }
@@ -440,7 +489,8 @@ h2 + .tooltip {
 
 .site-subheading {
   @include h6;
-  color: $color-gray;
+  font-size: 1.2rem;
+  color: $census-grey;
   display: block;
   letter-spacing: 0.5px;
   margin-bottom: 0.6rem;
@@ -726,215 +776,6 @@ h3 + .button_wrapper {
   }
 }
 
-// Color background helpers
-
-.usa-color-primary {
-  background-color: $color-primary;
-}
-
-.usa-color-primary-darker {
-  background-color: $color-primary-darker;
-}
-
-.usa-color-primary-darkest {
-  background-color: $color-primary-darkest;
-}
-
-.usa-color-base {
-  background-color: $color-base;
-}
-
-.usa-color-gray-dark {
-  background-color: $color-gray-dark;
-}
-
-.usa-color-gray-light {
-  background-color: $color-gray-light;
-}
-
-.usa-color-white {
-  background-color: $color-white;
-  box-shadow: inset 0 0 0 1px $color-gray;
-}
-
-.usa-color-primary-alt {
-  background-color: $color-primary-alt;
-}
-
-.usa-color-primary-alt-dark {
-  background-color: $color-primary-alt-dark;
-}
-
-.usa-color-primary-alt-darkest {
-  background-color: $color-primary-alt-darkest;
-}
-
-.usa-color-primary-alt-light {
-  background-color: $color-primary-alt-light;
-}
-
-.usa-color-primary-alt-lightest {
-  background-color: $color-primary-alt-lightest;
-}
-
-.usa-color-secondary {
-  background-color: $color-secondary;
-}
-
-.usa-color-secondary-dark {
-  background-color: $color-secondary-dark;
-}
-
-.usa-color-secondary-darkest {
-  background-color: $color-secondary-darkest;
-}
-
-.usa-color-secondary-light {
-  background-color: $color-secondary-light;
-}
-
-.usa-color-secondary-lightest {
-  background-color: $color-secondary-lightest;
-}
-
-.usa-color-gray {
-  background-color: $color-gray;
-}
-
-.usa-color-gray-lighter {
-  background-color: $color-gray-lighter;
-}
-
-.usa-color-gray-lightest {
-  background-color: $color-gray-lightest;
-}
-
-.usa-color-gray-warm-dark {
-  background-color: $color-gray-warm-dark;
-}
-
-.usa-color-gray-warm-light {
-  background-color: $color-gray-warm-light;
-}
-
-.usa-color-gray-cool-light {
-  background-color: $color-gray-cool-light;
-}
-
-.usa-color-gold {
-  background-color: $color-gold;
-}
-
-.usa-color-gold-light {
-  background-color: $color-gold-light;
-}
-
-.usa-color-gold-lighter {
-  background-color: $color-gold-lighter;
-}
-
-.usa-color-gold-lightest {
-  background-color: $color-gold-lightest;
-}
-
-.usa-color-green {
-  background-color: $color-green;
-}
-
-.usa-color-green-light {
-  background-color: $color-green-light;
-}
-
-.usa-color-green-lighter {
-  background-color: $color-green-lighter;
-}
-
-.usa-color-green-lightest {
-  background-color: $color-green-lightest;
-}
-
-.usa-color-cool-blue {
-  background-color: $color-cool-blue;
-}
-
-.usa-color-cool-blue-light {
-  background-color: $color-cool-blue-light;
-}
-
-.usa-color-cool-blue-lighter {
-  background-color: $color-cool-blue-lighter;
-}
-
-.usa-color-cool-blue-lightest {
-  background-color: $color-cool-blue-lightest;
-}
-
-.usa-color-focus {
-  background-color: $color-focus;
-}
-
-.usa-color-visited {
-  background-color: $color-visited;
-}
-
-// Color text helpers
-
-.usa-color-text-primary-darkest {
-  color: $color-primary-darkest;
-}
-
-.usa-color-text-primary-darker {
-  color: $color-primary-darker;
-}
-
-.usa-color-text-primary {
-  color: $color-primary;
-}
-
-.usa-color-text-cool-blue-light {
-  color: $color-cool-blue-light;
-}
-
-.usa-color-text-primary-alt-darkest {
-  color: $color-primary-alt-darkest;
-}
-
-.usa-color-text-green {
-  color: $color-green;
-}
-
-.usa-color-text-visited {
-  color: $color-visited;
-}
-
-.usa-color-text-gray-dark {
-  color: $color-gray-dark;
-}
-
-.usa-color-text-gray {
-  color: $color-gray;
-}
-
-.usa-color-text-gray-warm-dark {
-  color: $color-gray-warm-dark;
-}
-
-.usa-color-text-secondary-darkest {
-  color: $color-secondary-darkest;
-}
-
-.usa-color-text-secondary-dark {
-  color: $color-secondary-dark;
-}
-
-.usa-color-text-secondary {
-  color: $color-secondary;
-}
-
-.usa-color-text-white {
-  color: $color-white;
-}
-
 .usa-heading-alt {
   border-bottom: 1px solid $color-gray;
   padding-bottom: .8rem;
@@ -946,30 +787,6 @@ h6.usa-heading-alt {
 }
 // scss-lint:enable QualifyingElement
 
-.usa-typography-example-font {
-  h1,
-  h2,
-  h3,
-  h4,
-  h5,
-  h6,
-  .usa-font-example p {
-    margin: 0;
-  }
-}
-
-.font-example-paragraph {
-  @include media($medium-screen) {
-    width: 20rem;
-  }
-}
-
-.usa-typography-example {
-  .usa-monospace {
-    @include margin(0 null 3rem);
-    font-size: 1.2rem;
-  }
-}
 
 .usa-monospace {
   font-family: $font-monospace;
@@ -1271,45 +1088,6 @@ code {
 }
 
 // Page styles
-.page-ui-components {
-
-  .usa-font-lead {
-    &:first-of-type {
-      margin-top: 3.2rem;
-    }
-  }
-}
-
-.page-design-principles {
-  @include media($medium-screen) {
-    .main-content .usa-grid-full {
-      @include margin(4rem null 3rem null);
-    }
-  }
-
-  // full-width styles. TODO: look into making a template instead.
-  .main-content {
-    width: 100%;
-  }
-
-  .styleguide-content {
-    @include margin(null auto);
-  }
-
-  .sidenav {
-    display: none;
-  }
-
-  img {
-    max-width: 18.4rem;
-  }
-
-  .footer-text-one-half {
-    @include media($medium-screen) {
-      @include span-columns(6);
-    }
-  }
-}
 
 .link-download {
   display: table;
@@ -1337,34 +1115,6 @@ code {
   }
 }
 
-.page-product-roadmap,
-.page-for-developers,
-.page-for-designers,
-.page-component-maturity-scale {
-  .usa-content {
-    > ul:not(.usa-content-list) {
-      max-width: $text-max-width;
-    }
-  }
-}
-
-.page-for-developers,
-.page-for-designers,
-.page-product-roadmap,
-.page-component-maturity-scale,
-.page-research {
-  h2 {
-    color: $color-primary-darker;
-  }
-}
-
-.page-product-roadmap {
-  .usa-label {
-    display: inline-block;
-    position: relative;
-  }
-}
-
 .usa-center {
   text-align: center;
 }
@@ -1378,8 +1128,6 @@ code {
     }
   }
 }
-
-// Custom tooltip styles -------------- //
 
 // Tooltip container
 .tooltip {
@@ -1435,48 +1183,6 @@ code {
   }
 }
 
-// Demo fixed footer
-.demo-footer {
-  background-color: $color-gray-dark;
-  box-shadow: 0 -2px 4px 0 rgba(0,0,0,0.5);
-  bottom: 0;
-  position: fixed;
-  width: 100%;
-  -moz-osx-font-smoothing: grayscale;
-  -webkit-font-smoothing: antialiased;
-
-  .usa-button {
-    background-image: url('#{$site-image-path}/angle-arrow-left-inverse.png');
-    background-image: url('#{$site-image-path}/angle-arrow-left-inverse.svg');
-    background-repeat: no-repeat;
-    background-position: left 2rem center;
-    background-size: 1rem;
-    padding-left: 3.3rem;
-
-    @include media($medium-screen) {
-      @include margin(0 1.5rem 0 null);
-    }
-  }
-}
-
-.demo-footer-title {
-  @include margin(0 null 0.7rem null);
-  color: $color-white;
-  display: inline-block;
-
-  @include media($medium-screen) {
-    @include margin(1em null);
-  }
-}
-
-.demo-footer-content {
-  @include margin(null $site-margins-mobile);
-
-  @include media($medium-screen) {
-    @include margin(null $site-margins);
-  }
-}
-
 hr {
   background: $color-gray-lighter;
   border: none;
@@ -1523,3 +1229,118 @@ article {
 
 
 } // article
+
+
+// Census specific CSS
+.header-dark {
+  background: $color-primary-darkest;
+
+  .usa-logo a {
+    color: white;
+  }
+}
+
+.usa-chart-bar {
+  fill: $color-primary;
+}
+
+.usa-content h2 {
+  max-width: $text-max-width;
+}
+
+.axis path,
+.axis line {
+  fill: none;
+  stroke: $color-gray-lighter;
+  shape-rendering: crispEdges;
+}
+
+text.label {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+
+g.axis.axis--y > .domain {
+  display: none;
+}
+
+text {
+  font-family: 'Roboto', $helvetica;
+  font-size: 1.1rem;
+}
+
+.usa-legend {
+  margin-left: 5.5rem;
+  margin-top: 1rem;
+}
+
+.usa-legend-text {
+  font-size: 1.4rem;
+
+  + .usa-legend-box {
+    margin-left: 2.5rem;
+  }
+}
+
+.usa-legend-box {
+  background-color: $color-primary;
+  display: inline-block;
+  height: 1.15rem;
+  vertical-align: middle;
+  width: 1.15rem;
+}
+
+.usa-legend-box:nth-child(3),
+.usa-legend-box:nth-child(4) {
+  background-color: $color-primary-alt;
+}
+
+.usa-chart-title {
+  margin-bottom: 3rem;
+  margin-top: 4rem;
+}
+
+.line {
+  fill: none;
+  stroke: steelblue;
+  stroke-width: 1.5px;
+}
+
+.homepage-header {
+  margin-bottom: 6rem;
+}
+
+@include media($medium-screen) {
+  .homepage-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+
+  .page-content {
+    margin-left: 5%;
+    margin-right: 5%;
+  }
+}
+
+@include media($large-screen) {
+  .page-content {
+    margin-left: 25%;
+  }
+
+  .docspage-header {
+    margin-bottom: 6rem;
+  }
+
+  .docspage-header h1 {
+    margin-bottom: 0rem;
+  }
+
+  .homepage-content {
+    margin-left: 25%;
+  }
+
+  .homepage-header h1 {
+    margin-bottom: 0;
+    max-width: 35rem;
+  }
+}

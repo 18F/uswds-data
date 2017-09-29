@@ -1,57 +1,32 @@
 primary:
-  - href: /components/
-  - href: /page-templates/
-  - href: /getting-started/
   - href: /design-principles/
-  - href: /whats-new/
+  - href: /visualizations/
+  - href: /components/
+  - href: /references/
 
 mobile:
+  - href: /design-principles/
+  - href: /visualizations/
+    collapsible: true
   - href: /components/
     collapsible: true
-  - href: /page-templates/
-  - href: /getting-started/
-    collapsible: true
-  - href: /design-principles/
-  - href: /whats-new/
-    collapsible: true
+  - href: /references/
 
-UI components:
+Visualization types:
+  - text: Overview
+    href: /visualizations/
+  - href: /visualizations/area-chart/
+  - href: /visualizations/bar-chart/
+  - href: /visualizations/line-chart/
+  - href: /visualizations/scatterplot/
+  - href: /visualizations/table/
+
+Components:
   - text: Overview
     href: /components/
-  - href: /components/typography/
   - href: /components/colors/
-  - href: /components/accessibility/
-  - href: /components/grids/
-  - href: /components/buttons/
-  - href: /components/labels/
-  - href: /components/tables/
-  - href: /components/alerts/
-  - href: /components/accordions/
-  - href: /components/form-controls/
-  - href: /components/form-templates/
-  - href: /components/search-bar/
-  - href: /components/sidenav/
-  - href: /components/headers/
-  - href: /components/footers/
+  - href: /components/graphic-components/
+  - href: /components/text-styles/
 
-Getting started:
-  - text: Overview
-    href: /getting-started/
-  - href: /getting-started/developers/
-  - href: /getting-started/designers/
-  - href: /performance/
-  - href: /getting-started/code-guidelines/
-  - href: /getting-started/video-tutorials/
-  - href: /getting-started/implementations/
-  - href: /getting-started/showcase/
-
-Page templates:
-  - href: /page-templates/
-
-What’s new:
-  - text: Overview
-    href: /whats-new/
-  - href: /whats-new/releases/
-  - href: /whats-new/updates/
-  - href: /whats-new/product-roadmap/
-  - href: /whats-new/research/
+References:
+  - href: /references/

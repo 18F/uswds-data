@@ -1,69 +1,14 @@
 ---
 permalink: /
-layout: landing
-title: A design system for government digital services
-hero:
-  callout: U.S. Web Design Standards
-  content: The Standards are a design system that allows federal agencies to quickly prototype and deploy digital products using a baseline of design patterns.
-graphic_list:
-  list_item:
-    - topic: Getting Started
-      description: Learn how to get started using the U.S. Web Design Standards for your project, regardless of your technical stack.
-      image:
-        src: img/home/get-started.svg
-        alt:
-    - topic: UI Components
-      description: Discover all the different components that the Standards provide as both design and development assets.
-      image:
-        src: img/home/ui-component.svg
-        alt:
-    - topic: What's New
-      description: Keep up to date with the current news and product development updates for the U.S. Web Design Standards.
-      image:
-        src: img/home/new.svg
-        alt:
-    - topic: Page Templates
-      description: Explore the different page templates that have been created to jump start your product development.
-      image:
-        src: img/home/page-templates.svg
-        alt:
+title: Census Data Design Guidelines
+layout: homepage
+lead: This handy guide is designed to help communicate the wide variety of data and information generated every day by the U.S. Census Bureau into easy-to-understand, visual references for a general audience.
+button: See the principles
+link: /design-principles
 ---
 
-## New training and services
+The guide starts by identifying some common guidelines and principles to keep in mind when designing data visualizations using U.S. Census data, and further examines some common types. We focus first on the most common data visualizations first, with the idea that this guide can be easily expanded once a clear foundation is established.
 
-{% capture training %}
-### Training
+Furthermore, we encourage those in the broader community to also contribute ideas and helpful information here. By making government data more accessible and intuitive for a broader cross-section of the American public, we hope to further expand discussion around topics important to the American people, and illuminated through real, tangible data.
 
-We offer a customized training program to fit your team’s needs. The
-product team will provide guidance for getting up and running with
-the U.S. Web Design Standards and kick-start your design and
-development.
-
-<a href="mailto:uswebdesignstandards@gsa.gov" class="usa-button cta" onclick="ga('send', 'event', 'Clicked Training CTA', 'Clicked training call to action');">
-  <img src="{{ site.baseurl }}/img/logo-email.png" alt="">
-  Email us about training
-</a>
-{% endcapture %}
-
-{% capture customization %}
-### Customization
-
-The product team will partner with you to determine the appropriate
-level of help and customization to make adopting the Standards a
-piece of cake. You can also read about customization in our
-[developer guide](getting-started/developers/#customization-and-theming).
-
-<a href="mailto:uswebdesignstandards@gsa.gov" class="usa-button cta" onclick="ga('send', 'event', 'Clicked Customization CTA', 'Clicked customization call to action');">
-  <img src="{{ site.baseurl }}/img/logo-email.png" alt="">
-  Ask us about customization
-</a>
-{% endcapture %}
-
-<div class="usa-grid-full">
-  <div class="usa-width-one-half">
-    {{ training | markdownify }}
-  </div>
-  <div class="usa-width-one-half">
-    {{ customization | markdownify }}
-  </div>
-</div>
+Moving from basic principles to best practices, this brief guide to visualizing United States Census data introduces the art and and science of drawing clear explanations from complex data.
