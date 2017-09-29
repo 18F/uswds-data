@@ -195,7 +195,6 @@ d3.csv(window.location.origin + '/img/data/east_coast_populations.csv', function
       y = d3.scaleLinear().range([height, 0]),
       z = d3.scaleOrdinal(d3.schemeCategory10);
   var line = d3.line()
-      .curve(d3.curveBasis)
       .x(function(d) { return x(parseInt(d.date)); })
       .y(function(d) { return y(parseInt(d.population)); });
   var cities = data.columns.slice(1).map(function(id) {
